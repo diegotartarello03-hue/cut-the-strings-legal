@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Cut the Strings - TikTok connected</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="max-width:680px;margin:2rem auto;font-family:sans-serif;line-height:1.5">
+<h1>TikTok authorization received</h1>
+<p id="msg">Waiting for the authorization result...</p>
+<p>The channel owner's publishing tool will now exchange this one-time code for an access token on their own computer. You can close this page.</p>
+<pre id="code" style="white-space:pre-wrap;word-break:break-all"></pre>
+<p><a href="index.html">Back</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+<script>
+var p=new URLSearchParams(location.search);
+if(p.get("code")){document.getElementById("msg").textContent="Authorization successful. One-time code:";document.getElementById("code").textContent=p.get("code");}
+else{document.getElementById("msg").textContent="No authorization code: "+(p.get("error_description")||"nothing to show");}
+</script></body></html>
